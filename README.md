@@ -1,7 +1,7 @@
 Hi ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif)My name is Jordan Willian
 ======================================================================================================================================
 
-Software Engineer
+Computer Engineer
 -----------------
 
 👋 Hi there! I'm a passionate and dedicated professional with a Bachelor's degree in Science and Technology and Computer Engineering. My primary focus is on building a great career in Software Engineering. I am deeply fascinated by Mixed Reality, Augmented Reality, Virtual Reality, and the Metaverse. 🚀 Over the years, I've been working with a variety of web and mobile technologies, including Angular, React, React Native, Ionic, Node.js, and Firebase. I'm constantly exploring new technologies and pushing the boundaries of what's possible in the digital world. Join me on my journey as I develop innovative solutions and immerse myself in the next frontier of interactive experiences. 💻 Let's connect and collaborate to create something extraordinary together!
