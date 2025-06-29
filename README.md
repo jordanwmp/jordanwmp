@@ -4,7 +4,10 @@ Hi ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-912
 Computer Engineer
 -----------------
 
-👋 Hi there! I'm a passionate and dedicated professional with a Bachelor's degree in Science and Technology and Computer Engineering. My primary focus is on building a great career in Software Engineering. I am deeply fascinated by Mixed Reality, Augmented Reality, Virtual Reality, and the Metaverse. 🚀 Over the years, I've been working with a variety of web and mobile technologies, including Angular, React, React Native, Ionic, Node.js, and Firebase. I'm constantly exploring new technologies and pushing the boundaries of what's possible in the digital world. Join me on my journey as I develop innovative solutions and immerse myself in the next frontier of interactive experiences. 💻 Let's connect and collaborate to create something extraordinary together!
+🎓 I hold a degree in Computer Engineering and aim to build a solid career as a Software Engineer and Architect, with a strong focus on Front-End and Mobile development using hybrid technologies.
+💻 My work is centered around the JavaScript ecosystem, leveraging its versatility to develop APIs, mobile apps, and web platforms.
+🚀 I strive to bridge the theoretical foundations of computing with real-world challenges, maintaining a continuous learning routine through study, reading, and specialized courses — constantly sharpening my skills as a Computer Engineer.
+
 
 *   🌍  I'm based in Brazil
 *   ✉️  You can contact me at [jordanwillian.ecp@gmail.com](mailto:jordanwillian.ecp@gmail.com)
