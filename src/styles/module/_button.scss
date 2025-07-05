@@ -1,0 +1,62 @@
+@use '../base/variables' as v;
+
+%btn-default {
+  background: v.$background-color;
+  color: v.$dark-color;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background: v.$dark-color;
+    color: v.$light-color;
+  }
+}
+
+.btn {
+  @extend %btn-default;
+
+  &-primary {
+    background: v.$primary-color;
+    color: v.$light-color;
+
+    &:hover{
+      background: v.$dark-color;
+      color: v.$light-color;
+    }
+  }
+
+  &-secondary {
+    background: v.$secondary-color;
+    color: v.$light-color;
+
+    &:hover {
+      background: v.$dark-color;
+      color: v.$light-color;
+    }
+  }
+
+  &-dark {
+    background: v.$dark-color;
+    color: v.$light-color;
+
+    &:hover {
+      // background: v.$light-color;
+      // color: v.$dark-color;
+      opacity: 0.9;
+    }
+  }
+
+  &-danger {
+    background: v.$danger-color;
+    color: v.$light-color;
+
+    &:hover {
+      background: #df6a7e;
+    }
+  }
+  
+}

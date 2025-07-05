@@ -1,0 +1,137 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.header {
+  // height: 70vh;
+  display: flex;
+  padding: 2rem 2rem;
+
+  @include m.breakpoint(sm) {
+    flex-direction: column;
+    padding: 0 1.5rem;
+  }
+
+  @include m.breakpoint(md){
+    padding: 2rem;
+  }
+
+  @include m.breakpoint(lg){
+    padding: 2rem;
+  }
+
+  &__description {
+    // background: green;
+    padding: 2rem;
+    flex: 2;
+
+    @include m.breakpoint(sm) {
+      order: 1;
+      padding: 0;
+    }
+
+    &-title,
+    &-subtitle {
+      margin: 0;
+
+      @include m.breakpoint(sm) {
+        text-align: center;
+      }
+    }
+
+    &-title {
+      font-size: 3rem;
+      color: v.$dark-color;
+
+      span {
+        color: v.$primary-color;
+      }
+
+      @include m.breakpoint(sm) {
+        font-size: clamp(1.5rem, 1vw + 1rem, 2.5rem);
+      }
+      @include m.breakpoint(md) {
+        font-size: clamp(1.5rem, 1vw + 1rem, 2rem);
+      }
+    }
+
+    &-subtitle {
+      font-size: 2.5rem;
+      color: v.$primary-color;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+
+      @include m.breakpoint(sm) {
+        font-size: clamp(1rem, 1vw + 1.2rem, 1.6rem);
+      }
+      @include m.breakpoint(md) {
+        font-size: clamp(1rem, 1vw + 1.2rem, 1.4rem);
+      }
+    }
+
+    &-text {
+      color: v.$text-color;
+
+      @include m.breakpoint(sm) {
+        text-align: center;
+        line-height: 1.4;
+      }
+
+      @include m.breakpoint(md) {
+       font-size: 0.9rem;
+      }
+    }
+
+    &-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 2rem;
+
+      .btn {
+        min-width: 160px;
+        @include m.breakpoint(md){
+          min-width: 130px;
+          font-size: 0.9rem;
+        }
+      }
+
+      @include m.breakpoint(sm) {
+        justify-content: center;
+      }
+      @include m.breakpoint(md){
+        padding: 1rem 0;
+        margin-top: 0;
+      }
+    }
+
+  }
+
+  &__photo {
+    // background: orange;
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 4rem;
+   
+    &-image {
+      width: 100%;
+      max-width: 280px;
+
+      @include m.breakpoint(sm) {
+        max-width: 180px;
+      }
+
+      @include m.breakpoint(md) {
+        max-width: 140px;
+      }
+    }
+
+    @include m.breakpoint(sm){
+      flex: 1;
+      padding: 1.2rem 0;
+    }
+
+  }
+}

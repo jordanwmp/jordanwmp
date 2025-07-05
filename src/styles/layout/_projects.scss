@@ -1,0 +1,50 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: v.$background-color;
+  @include m.section-padding();
+
+  @include m.breakpoint(sm){
+    padding: 2rem 0;
+  }
+
+  @include m.breakpoint(md){
+    padding: 2rem;
+    justify-content: space-evenly;
+  }
+
+  &__title {
+    @include m.section-title();
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+
+    @include m.breakpoint(sm){
+      flex-direction: column;
+      padding: 1rem 0;
+    }
+
+    @include m.breakpoint(lg){
+    padding: 2rem 0;
+    justify-content: space-evenly;
+  }
+
+  }
+
+  &__load-more{
+    @include m.section-end-btn();
+    margin: 0.5rem 0;;
+  }
+
+}

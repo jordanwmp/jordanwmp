@@ -1,0 +1,23 @@
+@use '../base/variables' as v;
+
+$footer-bg-color: #4A525E;
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1.25rem 0;
+  background-color: $footer-bg-color;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.08);
+  
+  &__text {
+    margin: 0;
+    color: v.$light-color;
+    font-size: 0.875rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    opacity: 0.85;
+  }
+}

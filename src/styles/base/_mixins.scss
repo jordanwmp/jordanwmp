@@ -1,0 +1,61 @@
+@use 'sass:map';
+@use './variables' as v;
+
+@mixin bg-img($url, $size: contain, $pos: center) {
+  background-image: url($url);
+  background-position: $pos;
+  background-size: $size;
+  background-repeat: no-repeat;
+}
+
+@mixin chip() {
+  background: v.$background-color;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  display: inline-block;
+  color: v.$text-color;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/*
+  MIXINS TO SET A DEFAULT
+  STYLES TO SECTION ON WEBSITE
+*/
+
+@mixin section-title() {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  margin: 0;
+}
+
+@mixin section-padding(){
+  padding: 2rem;
+   margin-bottom: 3rem;
+}
+
+@mixin section-end-btn(){
+  padding: 0.8rem 6rem !important; 
+}
+
+// MIXINS FOR RESPONSIVNESS
+$breakpoints: (
+  sm: 540px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  xxl: 1536px
+);
+
+@mixin breakpoint($key) {
+  $size: map.get($breakpoints, $key);
+  @if $size {
+    @media (max-width: $size) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint `#{$key}` não encontrado em $breakpoints.";
+  }
+}
+
