@@ -1,6 +1,6 @@
 <template>
   <section class="projects">
-    <h2 class="projects__title">Projects</h2>
+    <h2 class="projects__title">Portfolio</h2>
     <div class="projects__list">
       <ProjectCard :project="project" v-for="project in paginatedProjects" :key="project.id" />
     </div>
@@ -8,7 +8,6 @@
     <button class="btn btn-danger projects__load-more " @click="handlePaginate(6)">
       See all
     </button>
-
 
   </section>
 </template>

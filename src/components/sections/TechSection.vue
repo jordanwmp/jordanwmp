@@ -17,9 +17,11 @@ import { ref, onMounted } from 'vue';
 
 const iconScale = ref<number>(5)
 const techList = ref<string[]>([
-      'vi-file-type-angular', 'vi-file-type-ionic', 
-      'vi-file-type-reactjs', 'vi-file-type-node',
-      'vi-file-type-vue'
+      'vi-file-type-angular', 
+      'vi-file-type-ionic', 
+      'vi-file-type-reactjs',
+      'vi-file-type-vue', 
+      'vi-file-type-node'
     ]);
 
 </script>

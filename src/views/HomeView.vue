@@ -1,12 +1,12 @@
 <template>
-  <Nav />
-  <main>
+  <!-- <Nav /> -->
+  <!-- <main> -->
     <Header />
     <ProjectsSection />
     <TechSection />
     <ContactSection />
-  </main>
-  <Footer />
+  <!-- </main> -->
+  <!-- <Footer /> -->
 </template>
 
 <script setup lang="ts">
@@ -19,9 +19,9 @@ import Footer from '@/components/layout/Footer.vue';
 </script>
 
 <style lang="scss" scoped>
-main {
-  display: block;
-  max-width: 1400px;
-  margin: 0 auto;
-}
+// main {
+//   display: block;
+//   max-width: 1400px;
+//   margin: 0 auto;
+// }
 </style>

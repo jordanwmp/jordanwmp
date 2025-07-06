@@ -48,10 +48,10 @@ $breakpoints: (
   xxl: 1536px
 );
 
-@mixin breakpoint($key) {
+@mixin breakpoint($key, $type:max) {
   $size: map.get($breakpoints, $key);
   @if $size {
-    @media (max-width: $size) {
+    @media (#{$type}-width: $size) {
       @content;
     }
   } @else {

@@ -1,0 +1,80 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.portfolio {
+
+  &__title {
+    @include m.section-title()
+  }
+
+  &__research {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+
+    select {
+      padding: 0.5rem;
+      border: 0.01rem solid #ccc;
+      border-radius: 0.5rem;
+      text-align: left;
+      width: 98%;
+      min-width: 300px;
+
+      option {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    &--category {
+      display: flex;
+      gap: 1rem;
+
+      span {
+        @include m.chip();
+        text-transform: capitalize;
+        padding: 0.3rem 1rem;
+
+        &:last-child {
+          text-transform: uppercase !important;
+        }
+      }
+
+    }
+
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: v.$background-color;
+    border-radius: 8px;
+    padding: 1.5rem 0;
+
+    .card {
+      width: 90%;
+    }
+  }
+
+  &__paginate {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  &__empty {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+}

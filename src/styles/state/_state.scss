@@ -1,7 +1,8 @@
 .cls-disabled {
   pointer-events: none;      /* desativa todos os eventos de mouse */
   opacity: 0.6;              /* suaviza a aparência */
-  cursor: not-allowed;       /* indica estado desabilitado */
+  cursor: not-allowed !important;       /* indica estado desabilitado */
   user-select: none;         /* impede seleção de texto */
+  background: #9ca3af !important;
 }
 

@@ -1,11 +1,13 @@
 import { getLogoByName } from "./logo";
 
-type Technologies = 'Angular' | 'React' | 'Vue' | 'Node.js' | 
-                    'Webpack' | 'SASS' | 'Ionic Framework' | 
-                    'React Native' | 'Nest.js' | 'Next.js' | 
-                    'Express' | 'HTML' | 'CSS' |  'SASS' |
-                    'RxJS' | 'TypeScript' | 'JavaScript' |
-                    'API';
+export type Technologies = 'Angular' | 'React' | 'Vue' | 'Node.js' |
+  'Webpack' | 'SASS' | 'Ionic Framework' |
+  'React Native' | 'Nest.js' | 'Next.js' |
+  'Express' | 'HTML' | 'CSS' | 'SASS' |
+  'RxJS' | 'TypeScript' | 'JavaScript' |
+  'API';
+
+export type Category = 'all' | 'frontend' | 'mobile' | 'api'
 
 export interface Project {
   id: string;
@@ -13,8 +15,9 @@ export interface Project {
   description: string;
   logo: string;
   technologies: Technologies[];
+  category?: Category[],
   links?: {
-    github:string | null;
+    github: string | null;
     live: string | null;
   }
 }
@@ -33,6 +36,7 @@ export const projects: Project[] = [
     description: 'Website of an IT agency.',
     logo: getLogoByName('sass')?.icon,
     technologies: ['HTML', 'CSS', 'SASS'],
+    category: ['frontend'],
     links: {
       github: 'https://github.com/jordanwmp/sass-agency-website',
       live: 'https://jordanwmp.github.io/sass-agency-website/'
@@ -44,6 +48,7 @@ export const projects: Project[] = [
     description: 'A phonebook with Angular and RxJS.',
     logo: getLogoByName('angular')?.icon,
     technologies: ['Angular', 'RxJS'],
+    category: ['frontend'],
     links: {
       github: 'https://github.com/jordanwmp/angular-rxjs-phonebook',
       live: 'https://jordanwmp.github.io/angular-rxjs-phonebook/'
@@ -55,6 +60,7 @@ export const projects: Project[] = [
     description: 'Android application for construction management.',
     logo: getLogoByName('ionic')?.icon,
     technologies: ['Ionic Framework', 'Vue'],
+    category: ['mobile'],
     links: {
       github: null,
       live: 'rdo-digital.web.app'
@@ -66,6 +72,7 @@ export const projects: Project[] = [
     description: 'A PokéDex with Ionic and Angular.',
     logo: getLogoByName('ionic')?.icon,
     technologies: ['Ionic Framework', 'API'],
+    category: ['mobile'],
     links: {
       github: 'https://github.com/jordanwmp/projeto-pokeapi',
       live: null
@@ -77,6 +84,7 @@ export const projects: Project[] = [
     description: 'API that returns data from Brazilian States.',
     logo: getLogoByName('node')?.icon,
     technologies: ['Node.js', 'Express'],
+    category: ['api'],
     links: {
       github: 'https://github.com/jordanwmp/api-rest-informacoes-geograficas-estados-brasileiros',
       live: null
@@ -97,63 +105,63 @@ export const projects: Project[] = [
     id: 'proj-007',
     name: 'CodeQuiz',
     description: 'Ferramenta de quiz de programação com estatísticas de desempenho.',
-    logo: 'code-quiz.svg',
+    logo: '',
     technologies: ['Angular', 'Node.js', 'SASS'],
   },
   {
     id: 'proj-008',
     name: 'EventPulse',
     description: 'Dashboard de eventos ao vivo com visualização de dados analíticos.',
-    logo: 'event-pulse.svg',
+    logo: '',
     technologies: ['Vue', 'Express', 'SASS'],
   },
   {
     id: 'proj-009',
     name: 'FoodieFind',
     description: 'App de descoberta de restaurantes locais com mapas interativos.',
-    logo: 'foodie-find.svg',
+    logo: '',
     technologies: ['React Native', 'Node.js', 'SASS'],
   },
   {
     id: 'proj-010',
     name: 'HealthHub',
     description: 'Portal de gestão de saúde com agendamento de consultas e histórico médico.',
-    logo: 'health-hub.svg',
+    logo: '',
     technologies: ['Next.js', 'Nest.js', 'SASS'],
   },
   {
     id: 'proj-011',
     name: 'PhotoSnap',
     description: 'Galeria de fotos em nuvem com filtros e compartilhamento social.',
-    logo: 'photo-snap.svg',
+    logo: '',
     technologies: ['Vue', 'Webpack', 'SASS'],
   },
   {
     id: 'proj-012',
     name: 'MusicWave',
     description: 'Player de música streaming com playlists colaborativas.',
-    logo: 'music-wave.svg',
+    logo: '',
     technologies: ['React', 'Express', 'SASS'],
   },
   {
     id: 'proj-013',
     name: 'BlogSphere',
     description: 'CMS para blogs com editor WYSIWYG e SEO integrado.',
-    logo: 'blog-sphere.svg',
+    logo: '',
     technologies: ['Vue', 'Node.js', 'SASS'],
   },
   {
     id: 'proj-014',
     name: 'DevTracker',
     description: 'Painel de métricas de desenvolvimento integrado ao Git e CI/CD.',
-    logo: 'dev-tracker.svg',
+    logo: '',
     technologies: ['React', 'Node.js', 'Webpack'],
   },
   {
     id: 'proj-015',
     name: 'FinanceFlow',
     description: 'Aplicativo de finanças pessoais com gráficos de orçamento.',
-    logo: 'finance-flow.svg',
+    logo: '',
     technologies: ['Angular', 'Express', 'SASS'],
   },
 ];
@@ -181,6 +189,68 @@ export const paginateProjects = (
     limit: safeLimit
   }
 }
+
+export const searchProject = (
+  type: "category" | "framework",
+  stack: Category | Technologies,
+  offset: number,
+  limit: number
+) => {
+  let filteredArray: Project[] = []
+
+  if (type === "category") {
+    if (stack === "all") {
+      filteredArray = projects
+    } else {
+      filteredArray = projects.filter(project =>
+        project.category?.includes(stack as Category)
+      )
+    }
+  } else if (type === "framework") {
+    filteredArray = projects.filter(project =>
+      project.technologies.includes(stack as Technologies)
+    )
+  }
+
+  const total = filteredArray.length
+  const safeOffset = Math.max(0, Math.min(offset, total))
+  const safeLimit = Math.max(1, limit)
+
+  const paginated = filteredArray.slice(safeOffset, safeOffset + safeLimit)
+
+  return {
+    data: paginated,
+    total,
+    offset: safeOffset,
+    limit: safeLimit
+  }
+}
+
+
+// export const searchProject = (
+//   type: "category" | "framework",
+//   stack: Category | Technologies,
+//   offset: number,
+//   limit: number) => {
+
+//   let filteredArray: any[];
+
+//   if (type === "category") {
+
+//     if (stack === "all") {
+//       return paginateProjects(offset, limit).data
+//     }
+
+//     filteredArray = paginateProjects(offset, limit).data.filter(project => project.category?.includes(stack as Category))
+//     return filteredArray
+//   }
+//   else if (type === "framework") {
+//     filteredArray = paginateProjects(offset, limit).data.filter(project => project.technologies.includes(stack as Technologies))
+//     return filteredArray
+//   }
+
+//   return undefined
+// }
 
 export const techs = [
   {

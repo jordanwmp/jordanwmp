@@ -1,4 +1,5 @@
 @use '../base/variables' as v;
+@use '../base/mixins' as m;
 
 .nav {
   display: flex;
@@ -6,6 +7,10 @@
   padding: 0 2rem;
   justify-content: space-between;
   align-items: center;
+
+  @include m.breakpoint(sm){
+    min-height: 3.5rem;
+  }
 
   &__logo {
     h1{
@@ -22,6 +27,14 @@
   &__list {
     display: flex;
     gap: 1rem;
+
+    @include m.breakpoint(sm){
+      display: none;
+    }
+
+    @include m.breakpoint(md){
+      display: none;
+    }
 
     &-item {
       a {

@@ -1,0 +1,113 @@
+@use '../base/variables'  as v;
+@use '../base/mixins'     as m;
+
+// MÓDULO: Drawer lateral
+.drawer-container {
+  position: relative;
+  @include m.breakpoint(md, min){
+    display: none;
+  }
+}
+
+// Botão que abre o drawer
+.drawer-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  // color: v.$primary-color;
+  color: #fff;
+  position: fixed;
+  top: 0.6rem;
+  right: 1rem;
+  z-index: 1001;
+  
+  // só em telas ≥ md escondemos o botão
+  @include m.breakpoint(md, min) {
+    display: none;
+  }
+}
+
+// Overlay semântico
+.drawer__overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+// Painel lateral
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: v.$dark-color;
+  padding: 2rem 1rem;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  
+  // escondemos em telas ≥ md  
+  @include m.breakpoint(md, min) {
+    display: none;
+  }
+
+  &__close {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: v.$light-color;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 4rem 0 0;
+    margin: 0;
+
+    & .drawer__item {
+      margin-bottom: 1.5rem;
+
+      a {
+        color: v.$light-color;
+        text-decoration: none;
+        font-size: 1.2rem;
+        &:hover {
+          color: v.$primary-color;
+        }
+      }
+    }
+  }
+}
+
+/* ===================================================
+   ANIMAÇÕES (Vue <transition>)
+   =================================================== */
+.drawer-fade-enter-active,
+.drawer-fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.drawer-fade-enter-from,
+.drawer-fade-leave-to {
+  opacity: 0;
+}
+.drawer-fade-enter-to,
+.drawer-fade-leave-from {
+  opacity: 1;
+}
+
+.drawer-slide-enter-active,
+.drawer-slide-leave-active {
+  transition: transform 0.3s ease;
+}
+.drawer-slide-enter-from,
+.drawer-slide-leave-to {
+  transform: translateX(100%);
+}
+.drawer-slide-enter-to,
+.drawer-slide-leave-from {
+  transform: translateX(0);
+}
