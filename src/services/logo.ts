@@ -31,6 +31,14 @@ export const logos = [
   {
     name: 'sass',
     icon: 'vi-file-type-sass',
+  },
+  {
+    name: 'webpack',
+    icon: 'si-webpack '
+  },
+  {
+    name: 'nest',
+    icon: 'vi-file-type-nestjs'
   }
 ]
 

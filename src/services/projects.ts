@@ -1,11 +1,12 @@
 import { getLogoByName } from "./logo";
 
-export type Technologies = 'Angular' | 'React' | 'Vue' | 'Node.js' |
+export type Technologies = 'Angular' |  'React' | 'Vue' | 'Node.js' |
   'Webpack' | 'SASS' | 'Ionic Framework' |
   'React Native' | 'Nest.js' | 'Next.js' |
   'Express' | 'HTML' | 'CSS' | 'SASS' |
   'RxJS' | 'TypeScript' | 'JavaScript' |
-  'API';
+  'API' | 'NgRx' | 'RxJS' | 'Jasmine' |
+  'Jest' | 'Firebase';
 
 export type Category = 'all' | 'frontend' | 'mobile' | 'api'
 
@@ -15,8 +16,8 @@ export interface Project {
   description: string;
   logo: string;
   technologies: Technologies[];
-  category?: Category[],
-  links?: {
+  category: Category[],
+  links: {
     github: string | null;
     live: string | null;
   }
@@ -59,7 +60,7 @@ export const projects: Project[] = [
     name: 'RDO Digital',
     description: 'Android application for construction management.',
     logo: getLogoByName('ionic')?.icon,
-    technologies: ['Ionic Framework', 'Vue'],
+    technologies: ['Ionic Framework', 'Vue', 'Firebase'],
     category: ['mobile'],
     links: {
       github: null,
@@ -71,7 +72,7 @@ export const projects: Project[] = [
     name: 'Ion PokeDéx',
     description: 'A PokéDex with Ionic and Angular.',
     logo: getLogoByName('ionic')?.icon,
-    technologies: ['Ionic Framework', 'API'],
+    technologies: ['Ionic Framework', 'Angular', 'API'],
     category: ['mobile'],
     links: {
       github: 'https://github.com/jordanwmp/projeto-pokeapi',
@@ -96,73 +97,131 @@ export const projects: Project[] = [
     description: 'Movie website with Vue.js and API call.',
     logo: getLogoByName('vue')?.icon,
     technologies: ['Vue', 'API'],
+    category: ['frontend'],
     links: {
       github: 'https://github.com/jordanwmp/vue-movie',
       live: null
     }
   },
   {
-    id: 'proj-007',
-    name: 'CodeQuiz',
-    description: 'Ferramenta de quiz de programação com estatísticas de desempenho.',
-    logo: '',
-    technologies: ['Angular', 'Node.js', 'SASS'],
+    id: '7',
+    name: 'Angular Automatic Testing',
+    description: 'Examples of automated testing with Angular and Jasmine.',
+    category: ['frontend'],
+    logo: getLogoByName('angular')?.icon,
+    technologies: ['Angular', 'Jasmine'],
+    links: {
+      github: 'https://github.com/jordanwmp/angular-jasmine-automatic-tests',
+      live: null
+    }
   },
   {
-    id: 'proj-008',
-    name: 'EventPulse',
-    description: 'Dashboard de eventos ao vivo com visualização de dados analíticos.',
-    logo: '',
-    technologies: ['Vue', 'Express', 'SASS'],
+    id: '8',
+    name: 'NgRX Counter',
+    description: 'A stateful counter with Angular and NgRX.',
+    logo: getLogoByName('angular')?.icon,
+    technologies: ['Angular', 'NgRx'],
+    category: ['frontend'],
+    links: {
+      live:'https://jordanwmp.github.io/angular-ngrx-counter/',
+      github: 'https://github.com/jordanwmp/angular-ngrx-counter'
+    }
   },
   {
-    id: 'proj-009',
-    name: 'FoodieFind',
-    description: 'App de descoberta de restaurantes locais com mapas interativos.',
-    logo: '',
-    technologies: ['React Native', 'Node.js', 'SASS'],
+    id: '9',
+    name: 'Angular Simple Counter',
+    description: 'A project to practice the main concepts of Angular.',
+    logo: getLogoByName('angular')?.icon,
+    technologies: ['Angular'],
+    category: ['frontend'],
+    links: {
+      github: 'https://github.com/jordanwmp/angular-simple-counter',
+      live: 'https://jordanwmp.github.io/angular-simple-counter/'
+    } 
   },
   {
-    id: 'proj-010',
-    name: 'HealthHub',
-    description: 'Portal de gestão de saúde com agendamento de consultas e histórico médico.',
-    logo: '',
-    technologies: ['Next.js', 'Nest.js', 'SASS'],
+    id: '10',
+    name: 'Vue To Do List',
+    description: 'App To Do list with Vue.js and reactivity.',
+    logo: getLogoByName('vue')?.icon,
+    technologies: ['Vue'],
+    category: ['frontend'],
+    links: {
+      github: 'https://github.com/jordanwmp/vue.js-todo-list',
+      live: null
+    }
   },
   {
-    id: 'proj-011',
-    name: 'PhotoSnap',
-    description: 'Galeria de fotos em nuvem com filtros e compartilhamento social.',
-    logo: '',
-    technologies: ['Vue', 'Webpack', 'SASS'],
+    id: '11',
+    name: 'Timer',
+    description: 'A Timer with to start, pause, and reset a timer, as well as save and clear pause history.',
+    logo: getLogoByName('vue')?.icon,
+    technologies: ['Vue'],
+    category: ['frontend'],
+    links: {
+      github: 'https://github.com/jordanwmp/vue.js-simple-timer',
+      live: null
+    }
   },
   {
-    id: 'proj-012',
-    name: 'MusicWave',
-    description: 'Player de música streaming com playlists colaborativas.',
+    id: '12',
+    name: 'Algorithm and Data Structure',
+    description: 'The main algorithms and data structures with Javascript.',
     logo: '',
-    technologies: ['React', 'Express', 'SASS'],
+    technologies: ['JavaScript'],
+    category: ['all'],
+    links: {
+      github: 'https://github.com/jordanwmp/algorithm-and-data-structure',
+      live: null
+    }
   },
   {
-    id: 'proj-013',
-    name: 'BlogSphere',
-    description: 'CMS para blogs com editor WYSIWYG e SEO integrado.',
-    logo: '',
-    technologies: ['Vue', 'Node.js', 'SASS'],
+    id: '13',
+    name: 'Event Manager API',
+    description: 'API with NestJs for event management, with authentication and authorization.',
+    logo: getLogoByName('nest')?.icon,
+    technologies: ['Node.js', 'Nest.js'],
+    category: ['api'],
+    links: {
+      github: 'https://github.com/jordanwmp/nestjs-event-manager-api',
+      live: null
+    }
   },
   {
-    id: 'proj-014',
-    name: 'DevTracker',
-    description: 'Painel de métricas de desenvolvimento integrado ao Git e CI/CD.',
-    logo: '',
-    technologies: ['React', 'Node.js', 'Webpack'],
+    id: '14',
+    name: 'Nest Basic API',
+    description: 'Simple API with Nest.js fundamentals.',
+    logo: getLogoByName('nest')?.icon,
+    technologies: ['Nest.js', 'Node.js'],
+    category: ['api'],
+    links: {
+      github: 'https://github.com/jordanwmp/nestjs-basic-api',
+      live: null
+    }
   },
   {
-    id: 'proj-015',
-    name: 'FinanceFlow',
-    description: 'Aplicativo de finanças pessoais com gráficos de orçamento.',
-    logo: '',
-    technologies: ['Angular', 'Express', 'SASS'],
+    id: '15',
+    name: 'Node Control Stock',
+    description: 'Inventory control with Node.js, Sequelize MySQL.',
+    logo: getLogoByName('node')?.icon,
+    technologies: ['Node.js', 'Express'],
+    category: ['api'],
+    links: {
+      github: 'https://github.com/jordanwmp/nodejs-control-stock',
+      live: null
+    }
+  },
+  {
+    id: '16',
+    name: 'Image Gallery',
+    description: 'An image gallery powered by webpack and Unsplash API.',
+    logo: getLogoByName('node')?.icon,
+    technologies: ['Webpack', 'API', 'Node.js'],
+    category: ['api'],
+    links: {
+      github: 'https://github.com/jordanwmp/webpack-image-gallery',
+      live: null
+    }
   },
 ];
 
@@ -276,5 +335,9 @@ export const techs = [
   {
     name: 'Node.js',
     icon: 'node',
+  },
+  {
+    name: 'Nest.js',
+    icon: 'nest',
   }
 ]

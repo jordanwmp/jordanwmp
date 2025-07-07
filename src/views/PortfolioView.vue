@@ -32,7 +32,7 @@
       <button class="btn btn-primary" :class="{ 'cls-disabled': offset >= (projects.length - WEIGHT) }"
         @click="offset += WEIGHT">Next</button>
 
-      <span>Total: {{ page }}/{{ totalPages }}</span>
+      <span>Pages: {{ page }}/{{ totalPages }}</span>
     </div>
 
     <p class="portfolio__empty" v-if="paginatedProjects.length === 0">No data found.</p>

@@ -13,8 +13,11 @@ import {
   ViFileTypeReactjs,
   ViFileTypeNode,
   ViFileTypeSass,
-  BiCodeSlash
+  BiCodeSlash,
+  ViFileTypeNestjs,
+  SiWebpack 
  } from "oh-vue-icons/icons";
+
 
  addIcons(
   FaGithub, 
@@ -25,7 +28,9 @@ import {
   ViFileTypeReactjs,
   ViFileTypeNode,
   ViFileTypeSass,
-  BiCodeSlash
+  BiCodeSlash,
+  ViFileTypeNestjs ,
+  SiWebpack
 )
 
 const app = createApp(App)
