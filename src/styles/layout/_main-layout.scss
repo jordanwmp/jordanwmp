@@ -9,9 +9,11 @@
 
   &__content{
     flex: 1;
-    padding: 1rem;
-    @media(min-width: 768px){
+    padding: 0.5rem;
+    
+    @include m.breakpoint(md, min){
       padding: 4rem;
     }
+   
   }
 }

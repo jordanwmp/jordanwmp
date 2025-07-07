@@ -12,7 +12,7 @@
       </li>
       <li class="nav__list-item">
         <!-- <a href="/about">About</a> -->
-        <router-link to="/about">About</router-link>
+        <router-link to="/about">About me</router-link>
       </li>
     </ul>
     <MobileDrawer />
@@ -20,5 +20,5 @@
 </template>
 
 <script lang="ts" setup>
-import MobileDrawer from '../ui/MobileDrawer.vue';
+ import MobileDrawer from '../ui/MobileDrawer.vue';
 </script>

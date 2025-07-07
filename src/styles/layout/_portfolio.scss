@@ -16,6 +16,11 @@
     padding: 1rem;
     width: 100%;
 
+    @include m.breakpoint(md, min){
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+
     select {
       padding: 0.5rem;
       border: 0.01rem solid #ccc;
@@ -23,6 +28,11 @@
       text-align: left;
       width: 98%;
       min-width: 300px;
+
+      @include m.breakpoint(md, min){
+        width: auto;
+        min-width: 200px;
+      }
 
       option {
         white-space: nowrap;
@@ -57,11 +67,18 @@
     gap: 1rem;
     background: v.$background-color;
     border-radius: 8px;
-    padding: 1.5rem 0;
+    padding: 2rem 1rem;
 
-    .card {
-      width: 90%;
+    @include m.breakpoint(md, min){
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      padding: 2rem;
     }
+
+    // .card {
+    //   width: 90%;
+    // }
   }
 
   &__paginate {

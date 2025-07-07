@@ -19,10 +19,21 @@
       <nav v-if="isOpen" class="drawer">
         <button class="drawer__close" @click="isOpen = false">×</button>
         <ul class="drawer__list">
-          <li class="drawer__item"><a href="#home" @click="isOpen = false">Início</a></li>
-          <li class="drawer__item"><a href="#projects" @click="isOpen = false">Projetos</a></li>
-          <li class="drawer__item"><a href="#tech" @click="isOpen = false">Tecnologias</a></li>
-          <li class="drawer__item"><a href="#contact" @click="isOpen = false">Contato</a></li>
+          <li class="drawer__item">
+            <!-- <a href="#home" @click="isOpen = false">Início</a> -->
+             <router-link to="/"  @click="isOpen = false">Home</router-link>
+          </li>
+          <li class="drawer__item">
+            <!-- <a href="#projects" @click="isOpen = false">Projetos</a> -->
+             <router-link to="/portfolio"  @click="isOpen = false">Portfolio</router-link>
+          </li>
+          <li class="drawer__item">
+            <!-- <a href="#tech" @click="isOpen = false">Tecnologias</a> -->
+             <router-link to="/about"  @click="isOpen = false">About me</router-link>
+          </li>
+          <!-- <li class="drawer__item">
+            <a href="#contact" @click="isOpen = false">Contato</a>
+          </li> -->
         </ul>
       </nav>
     </transition>

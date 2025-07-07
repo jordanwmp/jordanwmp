@@ -18,23 +18,9 @@
     ul {
       display: flex;
       align-items: center;
-      justify-content: space-around;
+      justify-content: space-evenly;
       flex-wrap: wrap;
-
-      @include m.breakpoint(sm) {
-        justify-content: center;
-        gap: 0.2rem;
-      }
+      gap: 2rem;
     }
   }
-
-  &__item {
-    img {
-      width: 100%;
-      max-width: 100px;
-      margin: 0.5rem;
-      transition: transform 0.3s ease;
-    }
-  }
-
 }

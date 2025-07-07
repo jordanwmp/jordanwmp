@@ -15,9 +15,10 @@
 
   &__description{
     color: v.$text-color;
-    @include m.breakpoint(sm){
-      text-align: center
-    }
+    text-align: center;
+    // @include m.breakpoint(sm){
+    //   text-align: center
+    // }
   }
 
   button{

@@ -4,134 +4,211 @@
 .header {
   // height: 70vh;
   display: flex;
-  padding: 2rem 2rem;
+  flex-direction: column;
+  
+  // padding: 2rem 2rem;
 
-  @include m.breakpoint(sm) {
-    flex-direction: column;
+  @include m.breakpoint(md, min){
+    flex-direction: row;
     padding: 0 1.5rem;
   }
 
-  @include m.breakpoint(md){
+  @include m.breakpoint(lg, min){
     padding: 2rem;
+    // background-color: orange;
   }
 
-  @include m.breakpoint(lg){
-    padding: 2rem;
-  }
+  // @include m.breakpoint(sm) {
+  //   flex-direction: column;
+  //   padding: 0 1.5rem;
+  // }
+
+  // @include m.breakpoint(md){
+  //   padding: 2rem;
+  // }
+
+  // @include m.breakpoint(lg){
+  //   padding: 2rem;
+  // }
 
   &__description {
     // background: green;
-    padding: 2rem;
+    // padding: 2rem;
     flex: 2;
+    order: 1;
+    padding: 0;
 
-    @include m.breakpoint(sm) {
-      order: 1;
-      padding: 0;
+    @include m.breakpoint(md, min){
+      order: 0;
     }
+
+    // @include m.breakpoint(sm) {
+    //   order: 1;
+    //   padding: 0;
+    // }
 
     &-title,
     &-subtitle {
       margin: 0;
+      text-align: center;
 
-      @include m.breakpoint(sm) {
-        text-align: center;
+      @include m.breakpoint(md, min){
+        text-align: left;
       }
+
+      // @include m.breakpoint(sm) {
+      //   text-align: center;
+      // }
     }
 
     &-title {
-      font-size: 3rem;
+      // font-size: 3rem;
       color: v.$dark-color;
+      font-size: clamp(1.5rem, 1vw + 1.2rem, 2.5rem);
 
       span {
         color: v.$primary-color;
       }
 
-      @include m.breakpoint(sm) {
-        font-size: clamp(1.5rem, 1vw + 1rem, 2.5rem);
+      @include m.breakpoint(md, min){
+         font-size: 2rem; 
       }
-      @include m.breakpoint(md) {
-        font-size: clamp(1.5rem, 1vw + 1rem, 2rem);
+
+      @include m.breakpoint(lg, min){
+        font-size: clamp(2.5rem, 1vw + 2rem, 2.8rem);
       }
+
+      // @include m.breakpoint(sm) {
+      //   font-size: clamp(1.5rem, 1vw + 1rem, 2.5rem);
+      // }
+      // @include m.breakpoint(md) {
+      //   font-size: clamp(1.5rem, 1vw + 1rem, 2rem);
+      // }
     }
 
     &-subtitle {
-      font-size: 2.5rem;
+      // font-size: 2.5rem;
       color: v.$primary-color;
       margin-bottom: 0.5rem;
       font-weight: bold;
+      font-size: clamp(1rem, 1vw + 1.1rem, 1.6rem);
 
-      @include m.breakpoint(sm) {
-        font-size: clamp(1rem, 1vw + 1.2rem, 1.6rem);
+      @include m.breakpoint(md, min){
+        font-size: 2rem;
       }
-      @include m.breakpoint(md) {
-        font-size: clamp(1rem, 1vw + 1.2rem, 1.4rem);
+
+      @include m.breakpoint(lg, min){
+        font-size: clamp(2rem, 1vw + 1.8rem, 2.5rem);
       }
+
+      // @include m.breakpoint(sm) {
+      //   font-size: clamp(1rem, 1vw + 1.2rem, 1.6rem);
+      // }
+      // @include m.breakpoint(md) {
+      //   font-size: clamp(1rem, 1vw + 1.2rem, 1.4rem);
+      // }
     }
 
     &-text {
       color: v.$text-color;
+      text-align: center;
+      line-height: 1.4;
 
-      @include m.breakpoint(sm) {
-        text-align: center;
-        line-height: 1.4;
+      @include m.breakpoint(md, min){
+        text-align: left;
       }
 
-      @include m.breakpoint(md) {
-       font-size: 0.9rem;
+      @include m.breakpoint(lg, min){
+        max-width: 90%;
       }
+
+      @include m.breakpoint(xl, min){
+        max-width: 70%;
+      }
+
+      // @include m.breakpoint(sm) {
+      //   text-align: center;
+      //   line-height: 1.4;
+      // }
+
+      // @include m.breakpoint(md) {
+      //  font-size: 0.9rem;
+      // }
     }
 
     &-btns {
       display: flex;
       gap: 1rem;
-      justify-content: flex-start;
+      // justify-content: flex-start;
+      justify-content: center;
       align-items: center;
       margin-top: 2rem;
 
-      .btn {
-        min-width: 160px;
-        @include m.breakpoint(md){
-          min-width: 130px;
-          font-size: 0.9rem;
-        }
+      @include m.breakpoint(md, min){
+        justify-content: flex-start;
       }
 
-      @include m.breakpoint(sm) {
-        justify-content: center;
+      .btn {
+        min-width: 160px;
+        // @include m.breakpoint(md){
+        //   min-width: 130px;
+        //   font-size: 0.9rem;
+        // }
       }
-      @include m.breakpoint(md){
-        padding: 1rem 0;
-        margin-top: 0;
-      }
+
+      // @include m.breakpoint(sm) {
+      //   justify-content: center;
+      // }
+      // @include m.breakpoint(md){
+      //   padding: 1rem 0;
+      //   margin-top: 0;
+      // }
     }
 
   }
 
   &__photo {
     // background: orange;
-    flex: 2;
+    // flex: 2;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 4rem;
-   
+    // padding-bottom: 4rem;
+    flex: 1;
+    padding: 1.2rem 0;
+
+    @include m.breakpoint(lg, min){
+      // padding-bottom: 2.5rem;
+      // background-color: red;
+    }
+
+    // @include m.breakpoint(md, min){
+    //   justify-content: flex-end;
+    // }
+
     &-image {
       width: 100%;
-      max-width: 280px;
+      // max-width: 280px;
+      max-width: 180px;
 
-      @include m.breakpoint(sm) {
-        max-width: 180px;
+      @include m.breakpoint(lg, min){
+        max-width: 250px;
       }
 
-      @include m.breakpoint(md) {
-        max-width: 140px;
-      }
+
+      // @include m.breakpoint(sm) {
+      //   max-width: 180px;
+      // }
+
+      // @include m.breakpoint(md) {
+      //   max-width: 140px;
+      // }
     }
 
-    @include m.breakpoint(sm){
-      flex: 1;
-      padding: 1.2rem 0;
-    }
+    // @include m.breakpoint(sm){
+    //   flex: 1;
+    //   padding: 1.2rem 0;
+    // }
 
   }
 }

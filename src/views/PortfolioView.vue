@@ -55,8 +55,8 @@ const offset = ref<number>(0)
 const filterType = ref<"category" | "framework">("category")
 const filterStack = ref<Category | Technologies>("all")
 const total = ref(0)
-const WEIGHT: number = 2
-const LIMIT: number = 2
+const WEIGHT: number = 6
+const LIMIT: number = 6
 
 const page = computed(() => {
   return Math.floor(offset.value / WEIGHT) + 1

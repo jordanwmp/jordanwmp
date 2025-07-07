@@ -5,7 +5,7 @@
       <ProjectCard :project="project" v-for="project in paginatedProjects" :key="project.id" />
     </div>
     
-    <button class="btn btn-danger projects__load-more " @click="handlePaginate(6)">
+    <button class="btn btn-danger projects__load-more" @click="router.push('/portfolio')">
       See all
     </button>
 
@@ -17,16 +17,15 @@ import { ref, onMounted } from 'vue';
 import { paginateProjects } from '@/services/projects';
 import ProjectCard from '@/components/ui/ProjectCard.vue';
 
+import { useRouter } from 'vue-router';
+
+const router = useRouter()
+
 const paginatedProjects = ref<any[]>([]);
 
-const handlePaginate = (offset: number = 0, limit: number = 6): any[] => {
-  const paginated = paginateProjects(offset, limit);
-  console.log(paginated);
-  return paginated.data;
-};
 
 onMounted(() => {
-  paginatedProjects.value = handlePaginate();
+  paginatedProjects.value = paginateProjects(0, 6).data; //handlePaginate();
   console.log('ProjectsSection mounted, paginated projects:', paginatedProjects.value);
 });
 
