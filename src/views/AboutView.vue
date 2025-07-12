@@ -35,10 +35,14 @@
       <section class="about__section">
         <h2 class="about__section-title">Contact</h2>
         <ul class="about__list">
-          <li><strong>WhatsApp:</strong> <a @click="openUrl('https://wa.me/5598987180471')">+55 (98) 9 8718-0471</a>
+          <li>
+            <v-icon name="bi-whatsapp" scale="1.5"></v-icon> 
+            <a @click="openWhatsApp">+55 (98) 9 8718-0471</a>
           </li>
-          <li><strong>Email:</strong> <a
-              @click="openUrl('mailto:jordanwillian.ecp@gmail.com')">jordanwillian.ecp@gmail.com</a></li>
+          <li>
+            <v-icon name="co-gmail" scale="1.5"></v-icon> 
+            <a @click="openEmail">jordan.willian.mp@gmail.com</a></li>
+
         </ul>
       </section>
 
@@ -48,5 +52,5 @@
 
 <script setup lang="ts">
 import { downloadResume } from '@/utils/downloadResume';
-import { openUrl } from '@/utils/openUrl';
+import { openEmail, openWhatsApp } from '@/utils/openUrl';
 </script>

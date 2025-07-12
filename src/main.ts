@@ -6,6 +6,7 @@ import router from './router'
 //core e a função de registro
 import { OhVueIcon, addIcons } from 'oh-vue-icons'
 import { FaGithub, FaLinkedin } from 'oh-vue-icons/icons/fa'
+
 import { 
   ViFileTypeAngular, 
   ViFileTypeIonic,
@@ -15,7 +16,9 @@ import {
   ViFileTypeSass,
   BiCodeSlash,
   ViFileTypeNestjs,
-  SiWebpack 
+  SiWebpack,
+  BiWhatsapp,
+  CoGmail 
  } from "oh-vue-icons/icons";
 
 
@@ -29,8 +32,10 @@ import {
   ViFileTypeNode,
   ViFileTypeSass,
   BiCodeSlash,
-  ViFileTypeNestjs ,
-  SiWebpack
+  ViFileTypeNestjs,
+  SiWebpack,
+  BiWhatsapp,
+  CoGmail
 )
 
 const app = createApp(App)

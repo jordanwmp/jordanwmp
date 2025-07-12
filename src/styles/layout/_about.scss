@@ -45,6 +45,11 @@
       margin-bottom: 0.75rem;
       font-size: 1rem;
 
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 1rem;
+
       a {
         color: #3498db;
         text-decoration: none;
